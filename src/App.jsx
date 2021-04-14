@@ -1,18 +1,36 @@
-import React, { useEffect } from 'react';
-import { PageHeader, Avatar, Image } from 'antd';
-import logo from './assets/logo.jpeg';
-import 'antd/dist/antd.css';
+import React, { useState } from 'react';
+import { AppBar, Toolbar, Paper, Button } from '@material-ui/core';
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
-export default function App() {
-    useEffect(() => {
+import logo from './assets/logo.png';
 
-    }, [])
+const App = () => {
+    const [dark, setDark] = useState(true);
+
+    console.log(`DarkMode: ${dark}`);
+
+    const handleTheme = () => {
+        setDark(prev => !prev);
+    }
+
+    const theme = createMuiTheme({
+        palette: {
+            type: dark ? 'dark' : 'light',
+        },
+    })
+
     return (
-        <PageHeader
-            className="app-header"
-            title="Driving Mate"
-            subTitle="realtime-dashboard"
-            avatar={<Avatar><Image src={logo} /></Avatar>}
-        />
-    )
-}
+        <ThemeProvider theme={theme}>
+            <Paper>
+                <AppBar>
+                    <Toolbar>
+                        <img src={logo} alt='logo' style={{ maxWidth: 40 }} />
+                        <Button onClick={handleTheme}>Click Me!</Button>
+                    </Toolbar>
+                </AppBar>
+            </Paper>
+        </ThemeProvider>
+    );
+};
+
+export default App;
