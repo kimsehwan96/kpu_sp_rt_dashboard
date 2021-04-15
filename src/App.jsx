@@ -1,14 +1,11 @@
-import React, { useState } from 'react';
-import {Container, HeaderLayout} from "./AppElements";
-import Content from "./Content";
+import React from 'react';
+import {Container, ContentLayout, HeaderLayout} from "./elements";
 
 const App = () => {
-    const [darkMode, setDarkMode] = useState(true);
-
     return (
         <Container>
             <HeaderLayout />
-            <Content />
+            <ContentLayout />
         </Container>
     );
 };
