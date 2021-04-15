@@ -6,6 +6,7 @@ export const Container = styled.div`
   height: 12vh;
   justify-content: space-between;
   align-items: center;
+  border: white solid 1px;
 `;
 
 export const MainWrap = styled.div`
@@ -25,5 +26,5 @@ export const SubWrap = styled.div`
 
 export const StyledMoment = styled(Moment)`
   color: #fafafb;
-  margin-right: 15px;
+  margin-right: 20px;
 `;

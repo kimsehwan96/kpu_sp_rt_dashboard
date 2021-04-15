@@ -1,8 +1,14 @@
 import React from 'react';
+import {Container, IBWrapper, LGWrapper} from "./elements";
 
 const Content = () => {
     return (
-      <h1>This is Content</h1>
+      <Container>
+          <IBWrapper>
+          </IBWrapper>
+          <LGWrapper>
+          </LGWrapper>
+      </Container>
     );
 }
 
