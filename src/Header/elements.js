@@ -6,7 +6,6 @@ export const Container = styled.div`
   height: 12vh;
   justify-content: space-between;
   align-items: center;
-  border: white solid 1px;
 `;
 
 export const MainWrap = styled.div`
