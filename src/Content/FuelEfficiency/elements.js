@@ -20,13 +20,12 @@ export const Card = styled.div`
 export const CardHeader = styled.div`
   display: flex;
   align-items: center;
-  margin: 10px 10px auto;
+  margin-top: 12px;
+  margin-left: 10px;
 `;
 
 export const CardContent = styled.div`
   display: flex;
-  float: right;
-  margin-top: 20px;
-  margin-right: 10px;
+  justify-content: center;
   align-items: center;
 `;
