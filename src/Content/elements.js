@@ -18,7 +18,8 @@ export const LGWrapper = styled.div`
   height: 40%;
 `;
 
-// Typography
+
+/* Typography */
 export const Title = styled.p`
   color: #fafbfb;
 `;

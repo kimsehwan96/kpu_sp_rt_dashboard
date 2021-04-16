@@ -14,6 +14,7 @@ export const Wrapper = styled.div`
 export const Card = styled.div`
   color: #fafbfb;
   margin-bottom: 20px;
+  margin-left: 10px;
 `;
 
 export const CardHeader = styled.div`

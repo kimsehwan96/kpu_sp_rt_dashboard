@@ -1,6 +1,6 @@
 import React from 'react';
-import {Card, CardContent, CardHeader, Wrapper} from "./elements";
-import {Payload, Title, Unit} from '../elements';
+import { Wrapper, Card, CardContent, CardHeader } from './elements';
+import { Payload, Title, Unit } from '../elements';
 import { IconButton } from "@material-ui/core";
 import InfoIcon from '@material-ui/icons/Info';
 
