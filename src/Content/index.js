@@ -1,16 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Container, IBWrapper, LGWrapper } from "./elements";
-import InfoBox from "./InfoBox";
 import LineGraph from "./LineGraph";
+import DrivingRecord from "./DrivingRecord";
+import FuelEfficiency from "./FuelEfficiency";
+import FuelLevel from "./FuelLevel";
+import FuelConsumption from "./FuelConsumption";
 
 const Content = () => {
+
     return (
       <Container>
           <IBWrapper>
-              <InfoBox />
-              <InfoBox />
-              <InfoBox />
-              <InfoBox />
+              <DrivingRecord />
+              <FuelEfficiency />
+              <FuelLevel />
+              <FuelConsumption />
           </IBWrapper>
           <LGWrapper>
               <LineGraph />
