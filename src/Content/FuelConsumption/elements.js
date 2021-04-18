@@ -12,4 +12,22 @@ export const Wrapper = styled.div`
 export const Card = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 15px;
+  margin-top: 10px;
+`;
+
+export const CardTitle = styled.div`
+  
+`;
+
+export const CardSubTitle = styled.div`
+  margin-top: 20px;
+`;
+
+export const CardContent = styled.div`
+  display: flex; 
+  float: right; 
+  margin-top: 20px;
+  align-items: center;
+  margin-left: 110px;
 `;
