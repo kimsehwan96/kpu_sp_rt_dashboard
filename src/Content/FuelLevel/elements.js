@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   display: flex;
+  
   width: 25%;
   height: 95%;
   margin: 10px 10px auto;
@@ -12,4 +13,6 @@ export const Wrapper = styled.div`
 export const Card = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 10px;
 `;
+

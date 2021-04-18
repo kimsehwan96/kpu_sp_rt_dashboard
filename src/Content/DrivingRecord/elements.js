@@ -15,19 +15,18 @@ export const Card = styled.div`
   color: #fafbfb;
   margin-bottom: 20px;
   margin-left: 10px;
+  padding: 10px;
 `;
 
 export const CardHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 10px 10px auto;
 `;
 
 export const CardContent = styled.div`
   display: flex;
   float: right;
   margin-top: 20px;
-  margin-right: 10px;
   align-items: center;
 `;

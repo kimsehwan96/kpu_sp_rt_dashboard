@@ -1,7 +1,7 @@
 import React from 'react';
 import {Card, CardContent, CardHeader, Wrapper} from "./elements";
 import {BlueFont, Payload, RedFont, Title} from "../elements";
-import Gauge from "../FuelConsumption/Gauge";
+import Gauge from "./Gauge";
 
 const FuelEfficiency = () => {
     return (

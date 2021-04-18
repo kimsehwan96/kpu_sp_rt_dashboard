@@ -45,4 +45,5 @@ export const YellowFont = styled.p`
 
 export const RedFont = styled.p`
   color: #c11615;
+  margin-left: 100px;
 `;
