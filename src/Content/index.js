@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { Container, IBWrapper, LGWrapper } from "./elements";
-import LineGraph from "./LineGraph";
+import LineGraph from "./RealTimeChart";
 import DrivingRecord from "./DrivingRecord";
 import FuelEfficiency from "./FuelEfficiency";
 import FuelLevel from "./FuelLevel";
@@ -17,8 +17,8 @@ const Content = () => {
               <FuelConsumption />
           </IBWrapper>
           <LGWrapper>
-              <LineGraph />
-              <LineGraph />
+              {/*<LineGraph />*/}
+              {/*<LineGraph />*/}
           </LGWrapper>
       </Container>
     );
