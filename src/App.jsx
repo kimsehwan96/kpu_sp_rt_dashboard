@@ -1,20 +1,7 @@
-import React, { useEffect } from 'react';
-import {Container, ContentLayout, HeaderLayout} from "./elements";
-import io from 'socket.io-client';
+import React from 'react';
 
 const App = () => {
-    const socket = io('http://3.34.87.77:5000/binder');
-
-    useEffect(() => {
-        socket.on('rtdata', data => console.log(data));
-    }, [])
-
-    return (
-        <Container>
-            <HeaderLayout />
-            <ContentLayout />
-        </Container>
-    );
+    return <div className="App">Initial App</div>
 };
 
 export default App;
