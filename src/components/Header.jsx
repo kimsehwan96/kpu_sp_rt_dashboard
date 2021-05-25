@@ -8,7 +8,6 @@ import LightLogo from '../assets/lightLogo.png';
 const Header = () => {
     const [ ThemeMode ]  = useTheme();
 
-    console.log(ThemeMode)
     return (
         <Container>
             <Logo src={ ThemeMode === 'dark' ? DarkLogo : LightLogo } />
