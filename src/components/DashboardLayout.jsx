@@ -3,13 +3,16 @@ import styled from "styled-components";
 import { useRealtimeData } from "../context/RealtimeDataProvider";
 
 const DashboardLayout = () => {
-    const payloads = useRealtimeData();
+    const [ payloads ] = useRealtimeData();
 
     return (
         <Container>
-            <div>
-                {payloads.map(payload => <p key={payload.id}>{payload.title}: {payload.value}</p>)}
-            </div>
+            <DataWrapper>
+                {payloads.map(payload => (<DataOutput key={payload.id}>
+                        {payload.title} : {payload.value}
+                    </DataOutput>
+                ))}
+            </DataWrapper>
         </Container>
     );
 }
@@ -17,5 +20,13 @@ const DashboardLayout = () => {
 export default DashboardLayout;
 
 const Container = styled.div`
+  display: flex;
+`;
+
+const DataWrapper = styled.ul`
+  display: flex;
+`;
+
+const DataOutput = styled.li`
   display: flex;
 `;

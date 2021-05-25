@@ -5,7 +5,6 @@ import { GlobalStyle } from "./theme/GlobalStyle";
 
 // Layout
 import AppLayout from "./components/AppLayout";
-import DashboardLayout from "./components/DashboardLayout";
 
 const App = () => {
 
@@ -14,8 +13,8 @@ const App = () => {
             <RealtimeDataProvider>
                 <GlobalStyle />
                 <Suspense fallback={<div>로딩중...</div>}>
-                    <AppLayout />
-                    <DashboardLayout />
+                    <AppLayout>
+                    </AppLayout>
                 </Suspense>
             </RealtimeDataProvider>
         </ThemeProvider>
