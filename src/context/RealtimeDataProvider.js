@@ -36,11 +36,11 @@ function useRealtimeData () {
                 setPayloads(result);
                 setLoading(false);
             } if (!result) {
-                setError(true)
+                setError(true);
             }
         })
 
-        if(loading) return <div>Data Loading...</div>
+        if(loading) return <div>Data Loading...</div>;
         if(error) return <div>Please Check Your Socket Server</div>;
     }, []);
 
