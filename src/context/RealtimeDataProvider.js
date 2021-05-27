@@ -20,8 +20,8 @@ const RealtimeDataProvider = ({ children }) => {
 function useRealtimeData () {
     const context  = useContext(RealtimeDataContext);
     const [payloads, setPayloads] = context;
-    const [loading, setLoading] = useState(true);
-    const [error , setError] = useState(false);
+    const [temp, setTemp] = useState({});
+    const [drivingData, setDrivingData] = useState([]);
 
     useEffect(() => {
         socket.on('rtdata', data => {
@@ -32,19 +32,23 @@ function useRealtimeData () {
                     title: title[field],
                     value: jsonData.values[idx]
                 }))
-            if (result) {
-                setPayloads(result);
-                setLoading(false);
-            } if (!result) {
-                setError(true);
+            setPayloads(result);
+
+            function findPayload(title) {
+                for(let i = 0; i<result.length; ++i) {
+                    if(result[i].title === title) {
+                        return result[i];
+                    }
+                }
             }
+
+            setTemp(findPayload('외부 공기 온도'));
+            setDrivingData([findPayload('주행 거리'), findPayload('운행 시간')]);
+
         })
+    }, [  ]);
 
-        if(loading) return <div>Data Loading...</div>;
-        if(error) return <div>Please Check Your Socket Server</div>;
-    }, []);
-
-    return [ payloads ];
+    return [ payloads, temp, drivingData ];
 }
 
 export { RealtimeDataProvider, useRealtimeData }

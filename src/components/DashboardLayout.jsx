@@ -8,9 +8,11 @@ const DashboardLayout = () => {
     return (
         <Container>
             <DataWrapper>
-                {payloads.map(payload => (<DataOutput key={payload.id}>
+                {payloads.map(
+                    payload => (
+                        <DataOutput key={payload.id}>
                         {payload.title} : {payload.value}
-                    </DataOutput>
+                        </DataOutput>
                 ))}
             </DataWrapper>
         </Container>
