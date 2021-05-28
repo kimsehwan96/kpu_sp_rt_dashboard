@@ -30,9 +30,6 @@ function useRealtimeData () {
     const speedDataArray = [];
     const timestamp = [];
 
-    console.log(speedDataArray);
-    console.log(timestamp);
-
     useEffect(() => {
         socket.on('rtdata', data => {
             const jsonData = JSON.parse(data);
