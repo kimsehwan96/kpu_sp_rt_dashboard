@@ -1,0 +1,19 @@
+{
+  "data": "",
+  "engine_load" : "ps",
+  "engine_coolant_temp" : "°C",
+  "engine_rpm" : "rpm",
+  "vehicle_speed" : "km/h",
+  "maf_sensor" :  "g/s",
+  "o2_voltage" : "V",
+  "throttle" :  "ms",
+  "short_fuel_trim_bank"  :  "km/L",
+  "long_fuel_trim_bank" : "km/L",
+  "intake_air_temperature" :  "°C",
+  "engine_runtime" : "sec",
+  "traveled_distance" : "km",
+  "fuel_tank_level" : "L",
+  "ambient_air_temperature" : "°C",
+  "engine_oil_temperature" :  "°C",
+  "transmission_actual_gear" : "단"
+}

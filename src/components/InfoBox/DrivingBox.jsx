@@ -18,7 +18,7 @@ const DrivingBox = () => {
                         <Payload
                             styles={{ color: ThemeMode === 'dark' ? '#fff' : '#1f1f1f' }}
                         >{data.value}</Payload>
-                        <Unit>km</Unit>
+                        <Unit>{data.unit}</Unit>
                     </Content>
                 </Card>
             )) }

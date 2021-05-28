@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect, useContext } from "react";
-import title from '../libs/dataManager.json';
+import title from '../libs/dataTitle.json';
+import unit from '../libs/dataUnit.json';
 import io from 'socket.io-client';
 
 const URL = 'http://3.34.87.77:5000/binder'
@@ -30,7 +31,8 @@ function useRealtimeData () {
                 (field, idx) => Object({
                     id: field,
                     title: title[field],
-                    value: jsonData.values[idx]
+                    value: jsonData.values[idx],
+                    unit: unit[field],
                 }))
             setPayloads(result);
 
