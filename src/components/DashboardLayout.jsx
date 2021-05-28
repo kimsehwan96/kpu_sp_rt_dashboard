@@ -5,6 +5,7 @@ import styled from "styled-components";
 import DrivingBox from "./InfoBox/DrivingBox";
 import FuelEfficiencyBox from "./InfoBox/FuelEfficiencyBox";
 import FuelBox from "./InfoBox/FuelBox";
+import FuelConsumptionBox from "./InfoBox/FuelConsumptionBox";
 
 const DashboardLayout = () => {
 
@@ -13,6 +14,7 @@ const DashboardLayout = () => {
             <DrivingBox />
             <FuelEfficiencyBox />
             <FuelBox />
+            <FuelConsumptionBox />
         </Container>
     );
 }

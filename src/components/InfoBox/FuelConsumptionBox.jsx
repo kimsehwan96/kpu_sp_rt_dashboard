@@ -1,15 +1,15 @@
 import React from "react";
-import styled from "styled-components";
+import styled from 'styled-components';
 import { commonWrapper } from "../../theme/commonStyles";
 
-const FuelBox = () => {
+const FuelConsumptionBox = () => {
     return (
         <Wrapper />
     );
 }
 
-export default FuelBox;
+export default FuelConsumptionBox;
 
 const Wrapper = styled.div`
-    ${commonWrapper}
+  ${commonWrapper}
 `;
