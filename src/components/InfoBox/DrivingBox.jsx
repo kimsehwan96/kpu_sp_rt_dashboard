@@ -13,7 +13,7 @@ import { useTheme } from "../../context/ThemeProvider";
 
 
 const DrivingBox = () => {
-    const [, , drivingData] = useRealtimeData();
+    const { drivingData } = useRealtimeData();
     const [ ThemeMode ] = useTheme();
 
     return (

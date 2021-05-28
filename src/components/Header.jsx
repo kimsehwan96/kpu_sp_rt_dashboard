@@ -8,7 +8,7 @@ import LightLogo from '../assets/lightLogo.png';
 
 const Header = () => {
     const [ ThemeMode ]  = useTheme();
-    const [ , temp ] = useRealtimeData();
+    const { temp } = useRealtimeData();
 
     return (
         <Container>

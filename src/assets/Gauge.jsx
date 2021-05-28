@@ -45,7 +45,9 @@ const Gauge = ({
 
     return(
         <div>
-            <svg style={{overflow: "visible"}}
+            <svg style={{
+                overflow: "visible",
+            }}
                  width="11em"
                  viewBox={[-1, -1, 2, 1,].join(" ")}>
                 <defs>

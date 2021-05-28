@@ -11,7 +11,7 @@ import {
 import { useRealtimeData } from "../../context/RealtimeDataProvider";
 
 const FuelBox = () => {
-    const [ , , , fuel ] = useRealtimeData();
+    const { fuel } = useRealtimeData();
 
     return (
         <Wrapper>
@@ -49,7 +49,8 @@ const Header = styled.div`
 `;
 
 const Content = styled.div`
-  ${commonContent}
+  ${commonContent};
+  color: #79BCCD;
 `;
 
 const Payload = styled.div`
