@@ -1,5 +1,5 @@
 {
-  "none": "Title",
+  "data": "Title",
   "engine_load" : "엔진부하",
   "engine_coolant_temp" : "냉각수 온도",
   "engine_rpm" : "엔진 rpm",
