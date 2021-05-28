@@ -23,6 +23,7 @@ function useRealtimeData () {
     const [payloads, setPayloads] = context;
     const [temp, setTemp] = useState({});
     const [drivingData, setDrivingData] = useState([]);
+    const [fuel, setFuel] = useState([]);
 
     useEffect(() => {
         socket.on('rtdata', data => {
@@ -46,11 +47,12 @@ function useRealtimeData () {
 
             setTemp(findPayload('외부 공기 온도'));
             setDrivingData([findPayload('주행 거리'), findPayload('운행 시간')]);
+            setFuel([findPayload('평균 연비'), findPayload('잔여 연료량')])
 
         })
     }, [  ]);
 
-    return [ payloads, temp, drivingData ];
+    return [ payloads, temp, drivingData, fuel ];
 }
 
 export { RealtimeDataProvider, useRealtimeData }

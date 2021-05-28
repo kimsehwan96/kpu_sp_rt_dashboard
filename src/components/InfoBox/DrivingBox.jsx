@@ -1,6 +1,13 @@
 import React from "react";
 import styled from 'styled-components';
-import { commonWrapper } from '../../theme/commonStyles';
+import {
+    commonCard,
+    commonContent,
+    commonHeader,
+    commonPayload,
+    commonUnit,
+    commonWrapper
+} from '../../theme/commonStyles';
 import { useRealtimeData } from "../../context/RealtimeDataProvider";
 import { useTheme } from "../../context/ThemeProvider";
 
@@ -33,28 +40,21 @@ const Wrapper = styled.div`
 `;
 
 const Card = styled.div`
-  padding: 10px;
+  ${commonCard}
 `;
 
 const Header = styled.div`
-  display: flex;
-  font-size: 20px;
-  font-weight: bold;
+  ${commonHeader}
 `;
 
 const Content = styled.div`
-  margin-top: 50px;
-  display: flex;
-  float: right;
+  ${commonContent}
 `;
 
 const Payload = styled.div`
-  font-size: 18px;
-  font-weight: bolder;
-  margin-right: 10px;
+  ${commonPayload}
 `;
 
 const Unit = styled.div`
-  display: flex;
-  align-items: center;
+  ${commonUnit}
 `;

@@ -8,11 +8,11 @@
   "o2_voltage" : "o2 전압",
   "throttle" :  "스로틀",
   "short_fuel_trim_bank"  :  "순간 연비",
-  "long_fuel_trim_bank" : "연비",
+  "long_fuel_trim_bank" : "평균 연비",
   "intake_air_temperature" :  "흡기 온도",
   "engine_runtime" : "운행 시간",
   "traveled_distance" : "주행 거리",
-  "fuel_tank_level" : "연료량",
+  "fuel_tank_level" : "잔여 연료량",
   "ambient_air_temperature" : "외부 공기 온도",
   "engine_oil_temperature" :  "엔진 오일 온도",
   "transmission_actual_gear" : "기어 단수"
