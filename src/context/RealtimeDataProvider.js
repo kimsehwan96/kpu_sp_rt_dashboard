@@ -26,6 +26,13 @@ function useRealtimeData () {
     const [fuel, setFuel] = useState([]);
     const [realtimeFuelEfficiency, setRealtimeFuelEfficiency] = useState({});
 
+    // 두 데이터를 추후에 useState 할 것
+    const speedDataArray = [];
+    const timestamp = [];
+
+    console.log(speedDataArray);
+    console.log(timestamp);
+
     useEffect(() => {
         socket.on('rtdata', data => {
             const jsonData = JSON.parse(data);
@@ -37,6 +44,16 @@ function useRealtimeData () {
                     unit: unit[field],
                 }))
             setPayloads(result);
+
+            function setSpeedArray() {
+                speedDataArray.push(findPayload('속도').value);
+
+                if(speedDataArray.length > 8) {
+                    speedDataArray.shift();
+                }
+
+                console.log(speedDataArray);
+            }
 
             function findPayload(title) {
                 for(let i = 0; i<result.length; ++i) {
@@ -50,11 +67,12 @@ function useRealtimeData () {
             setDrivingData([findPayload('주행 거리'), findPayload('운행 시간')]);
             setFuel([findPayload('평균 연비'), findPayload('잔여 연료량')]);
             setRealtimeFuelEfficiency(findPayload('순간 연비'));
+            setSpeedArray();
 
         })
-    }, [  ]);
+    }, [ ]);
 
-    return { payloads, temp, drivingData, fuel, realtimeFuelEfficiency };
+    return { payloads, temp, drivingData, fuel, realtimeFuelEfficiency, speedDataArray };
 }
 
 export { RealtimeDataProvider, useRealtimeData }

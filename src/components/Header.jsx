@@ -13,8 +13,10 @@ const Header = () => {
     return (
         <Container>
             <Logo src={ ThemeMode === 'dark' ? DarkLogo : LightLogo } />
-            <TempWrap>{ temp.title } : {temp.value}</TempWrap>
-            <Timer format='MM/DD hh:mm' interval={ 30000 }/>
+            <InfoWrap>
+                <TempWrap>{temp.value}{temp.unit}</TempWrap>
+                <Timer format='MM/DD hh:mm' interval={ 30000 }/>
+            </InfoWrap>
         </Container>
     );
 }
@@ -35,10 +37,15 @@ const Logo = styled.img`
   height: 15vh;
 `;
 
+const InfoWrap = styled.div`
+  display: flex;
+`;
+
 const Timer = styled(timer)`
   margin-right: 10px;
 `;
 
 const TempWrap = styled.div`
   display: flex;
+  margin-right: 10px;
 `;
