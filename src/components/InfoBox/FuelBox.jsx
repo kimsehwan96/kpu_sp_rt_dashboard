@@ -16,7 +16,7 @@ const FuelBox = () => {
     return (
         <Wrapper>
             {fuel.map(data =>
-                <Card>
+                <Card key={data.id}>
                     <Header>
                         {data.title}
                     </Header>

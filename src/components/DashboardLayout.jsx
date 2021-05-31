@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 // InfoBox
@@ -8,9 +8,11 @@ import FuelBox from "./InfoBox/FuelBox";
 import FuelConsumptionBox from "./InfoBox/FuelConsumptionBox";
 
 // RealtimeChart
-import RealtimeChart from "./RealtimeChart";
+import RealtimeChart from './RealtimeChart';
+import {useRealtimeData} from "../context/RealtimeDataProvider";
 
 const DashboardLayout = () => {
+    const { speed } = useRealtimeData();
 
     return (
         <Container>
@@ -23,14 +25,22 @@ const DashboardLayout = () => {
             <RealtimeChartWrap>
                 <Card>
                     <RealtimeChart
-                        width={350}
+                        width={700}
+                        height={350}
                         title="속도 추이"
+                        time={Date.now()}
+                        value={speed.value}
+                        borderColor="#79BCCD"
+                        maxValue={250}
+                        minValue={0}
                     />
                 </Card>
                 <Card>
                     <RealtimeChart
-                        width={350}
+                        width={300}
+                        height={300}
                         title="RPM 추이"
+                        borderColor="#79BCCD"
                     />
                 </Card>
             </RealtimeChartWrap>

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
-import {commonCard, commonContent, commonHeader, commonWrapper} from '../../theme/commonStyles';
+import {commonCard, commonHeader, commonWrapper} from '../../theme/commonStyles';
 import {useRealtimeData} from "../../context/RealtimeDataProvider";
 import Gauge from "../../assets/Gauge";
 

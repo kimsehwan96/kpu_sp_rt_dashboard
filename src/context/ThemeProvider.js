@@ -31,7 +31,7 @@ function useTheme() {
             setThemeMode('dark');
             window.localStorage.setItem('theme', 'dark');
         };
-    }, [ThemeMode]);
+    }, [ ThemeMode, setThemeMode ]);
 
     return [ ThemeMode, toggleTheme ];
 }

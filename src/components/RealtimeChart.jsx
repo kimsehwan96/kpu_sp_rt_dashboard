@@ -1,60 +1,68 @@
-import React from 'react';
-import Chart from 'react-apexcharts';
+import React, { useEffect } from "react";
+import { Line } from 'react-chartjs-2';
+import 'chartjs-plugin-streaming';
 
-const RealtimeChart = ({ width, title }) => {
+const RealtimeChart = ({
+                           height,
+                           width,
+                           title,
+                           maxValue,
+                           minValue,
+                           time,
+                           value,
+                           borderColor,
+                           backgroundColor
+}) => {
+
+    useEffect(() => {
+        setInterval(() => {
+
+        }, 1000)
+    }, [])
+
+    const data = {
+        labels: [],
+        datasets: [{
+            label: title,
+            borderColor: borderColor,
+            backgroundColor: backgroundColor,
+            lineTension: 0,
+            borderDash: [8, 4],
+            data: [],
+        }]
+    }
 
     const options = {
-        chart: {
-            id: "realtime",
-            type: "line",
-            animations: {
-                enabled: true,
-                easing: 'linear',
-                dynamicAnimation: {
-                    speed: 1000
+        scales: {
+            xAxes: [{
+                type: 'realtime',
+                realtime: {
+                    onRefresh: function() {
+                        data.datasets[0].data.push({
+                            x: time,
+                            y: value,
+                        });
+                    },
+                    delay: 2000
                 }
-            },
-            toolbar: {
-                show: false
-            },
-            zoom: {
-                enabled: false
-            },
-        },
-        dataLabels: {
-            enabled: false
-        },
-        stroke: {
-            curve: 'smooth'
-        },
-        title: {
-            text: title,
-            align: 'left'
-        },
-        xaxis: {
-            categories: []
-        },
-        yaxis: {
-            max: 250
-        },
-        legend: {
-            show: false
+            }],
+            yAxes: [{
+                ticks: {
+                    min: minValue,
+                    max: maxValue,
+                }
+            }]
         }
-    };
+    }
 
-    const series = [
-        {
-            data: []
-        }
-    ];
-
-    return (
+    return(
         <div>
-            <Chart
-                options={options}
-                series={series}
-                width={width}
-            />
+        <Line
+            width={width}
+            height={height}
+            data={data}
+            options={options}
+        />
         </div>
     );
 }
