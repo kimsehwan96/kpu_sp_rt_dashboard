@@ -9,10 +9,10 @@ import FuelConsumptionBox from "./InfoBox/FuelConsumptionBox";
 
 // RealtimeChart
 import RealtimeChart from './RealtimeChart';
-import {useRealtimeData} from "../context/RealtimeDataProvider";
+import { useRealtimeData } from "../context/RealtimeDataProvider";
 
 const DashboardLayout = () => {
-    const { speed } = useRealtimeData();
+    const { speed, RPM } = useRealtimeData();
 
     return (
         <Container>
@@ -25,8 +25,6 @@ const DashboardLayout = () => {
             <RealtimeChartWrap>
                 <Card>
                     <RealtimeChart
-                        width={700}
-                        height={350}
                         title="속도 추이"
                         time={Date.now()}
                         value={speed.value}
@@ -37,10 +35,12 @@ const DashboardLayout = () => {
                 </Card>
                 <Card>
                     <RealtimeChart
-                        width={300}
-                        height={300}
                         title="RPM 추이"
+                        time={Date.now()}
+                        value={RPM.value}
                         borderColor="#79BCCD"
+                        maxValue={250}
+                        minValue={0}
                     />
                 </Card>
             </RealtimeChartWrap>
@@ -72,6 +72,7 @@ const RealtimeChartWrap = styled.div`
 const Card = styled.div`
   border: 1px solid #ADD7CF;
   border-radius: 15px;
+  padding: 10px;
   height: 30vh;
   width: 82vh;
 `;
