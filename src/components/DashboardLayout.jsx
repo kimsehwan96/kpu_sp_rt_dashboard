@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
+import { useTheme } from "../context/ThemeProvider";
 
 // InfoBox
 import DrivingBox from "./InfoBox/DrivingBox";
@@ -8,7 +9,7 @@ import FuelBox from "./InfoBox/FuelBox";
 import FuelConsumptionBox from "./InfoBox/FuelConsumptionBox";
 
 // RealtimeChart
-import RealtimeChart from './RealtimeChart';
+import RealtimeChart from '../assets/RealtimeChart';
 import { useRealtimeData } from "../context/RealtimeDataProvider";
 
 const DashboardLayout = () => {
@@ -38,7 +39,7 @@ const DashboardLayout = () => {
                         title="RPM 추이"
                         time={Date.now()}
                         value={RPM.value}
-                        borderColor="#79BCCD"
+                        borderColor="#00A363"
                         maxValue={250}
                         minValue={0}
                     />
@@ -59,7 +60,6 @@ const Container = styled.div`
 const InfoBoxWrap = styled.div`
   display: flex;
   justify-content: space-between;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
 `;
 
 const RealtimeChartWrap = styled.div`
@@ -74,5 +74,5 @@ const Card = styled.div`
   border-radius: 15px;
   padding: 10px;
   height: 30vh;
-  width: 82vh;
+  width: 80vh;
 `;

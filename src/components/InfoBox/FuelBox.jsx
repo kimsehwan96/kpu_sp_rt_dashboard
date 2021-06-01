@@ -10,26 +10,25 @@ import {
 } from "../../theme/commonStyles";
 import { useRealtimeData } from "../../context/RealtimeDataProvider";
 
+import FuelLiquid from "../../assets/Liquid";
+
 const FuelBox = () => {
-    const { fuel } = useRealtimeData();
+    const { ResidualFuel } = useRealtimeData();
 
     return (
         <Wrapper>
-            {fuel.map(data =>
-                <Card key={data.id}>
+                <Card>
                     <Header>
-                        {data.title}
+                        {ResidualFuel.title}
                     </Header>
                     <Content>
-                        <Payload>
-                            {data.value}
-                        </Payload>
-                        <Unit>
-                            {data.unit}
-                        </Unit>
+                        <FuelLiquid
+                            percent={ResidualFuel.value / 100}
+                            height={150}
+                            width={300}
+                        />
                     </Content>
                 </Card>
-            )}
         </Wrapper>
     );
 }

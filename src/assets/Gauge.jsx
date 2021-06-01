@@ -10,7 +10,7 @@ const Gauge = ({
     units,
 }) => {
     const backgroundArc = arc()
-        .innerRadius(0.65)
+        .innerRadius(0.85)
         .outerRadius(1)
         .startAngle(-Math.PI / 2)
         .endAngle(Math.PI / 2)
@@ -29,7 +29,7 @@ const Gauge = ({
     const angle = angleScale(percent)
 
     const filledArc = arc()
-        .innerRadius(0.65)
+        .innerRadius(0.85)
         .outerRadius(1)
         .startAngle(-Math.PI / 2)
         .endAngle(angle)

@@ -4,7 +4,8 @@ import { commonWrapper } from "../../theme/commonStyles";
 
 const FuelConsumptionBox = () => {
     return (
-        <Wrapper />
+        <Wrapper>
+        </Wrapper>
     );
 }
 

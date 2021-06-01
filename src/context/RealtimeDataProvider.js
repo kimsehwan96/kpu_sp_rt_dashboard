@@ -27,6 +27,7 @@ function useRealtimeData () {
     const [realtimeFuelEfficiency, setRealtimeFuelEfficiency] = useState({});
     const [speed, setSpeed] = useState({});
     const [RPM, setRPM] = useState({});
+    const [ResidualFuel, setResidualFuel] = useState({});
 
     useEffect(() => {
         socket.on('rtdata', data => {
@@ -48,16 +49,28 @@ function useRealtimeData () {
                 }
             }
 
+
             setTemp(findPayload('외부 공기 온도'));
             setDrivingData([findPayload('주행 거리'), findPayload('운행 시간')]);
             setFuel([findPayload('평균 연비'), findPayload('잔여 연료량')]);
             setRealtimeFuelEfficiency(findPayload('순간 연비'));
             setSpeed(findPayload('속도'));
             setRPM(findPayload('엔진 rpm'));
-        })
-    }, []);
+            setResidualFuel(findPayload('잔여 연료량'));
 
-    return { payloads, temp, drivingData, fuel, realtimeFuelEfficiency, speed, RPM };
+        })
+    }, [ setPayloads ]);
+
+    return {
+        payloads,
+        temp,
+        drivingData,
+        fuel,
+        realtimeFuelEfficiency,
+        speed,
+        RPM,
+        ResidualFuel,
+    };
 }
 
 export { RealtimeDataProvider, useRealtimeData }
