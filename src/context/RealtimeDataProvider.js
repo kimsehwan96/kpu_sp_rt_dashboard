@@ -2,6 +2,7 @@ import { createContext, useState, useEffect, useContext } from "react";
 import title from '../libs/dataTitle.json';
 import unit from '../libs/dataUnit.json';
 import io from 'socket.io-client';
+import { message } from 'antd';
 
 const URL = 'http://3.34.87.77:5000/binder'
 const socket = io(URL)
@@ -48,7 +49,6 @@ function useRealtimeData () {
                     }
                 }
             }
-
 
             setTemp(findPayload('외부 공기 온도'));
             setDrivingData([findPayload('주행 거리'), findPayload('운행 시간')]);

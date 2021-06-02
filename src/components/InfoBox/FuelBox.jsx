@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import {
     commonCard,
@@ -9,8 +9,9 @@ import {
     commonWrapper
 } from "../../theme/commonStyles";
 import { useRealtimeData } from "../../context/RealtimeDataProvider";
-
 import FuelLiquid from "../../assets/Liquid";
+
+import Message from "../Message";
 
 const FuelBox = () => {
     const { ResidualFuel } = useRealtimeData();
