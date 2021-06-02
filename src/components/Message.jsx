@@ -1,12 +1,14 @@
 import React from 'react';
-import { Alert } from '@material-ui/lab';
+import styled from 'styled-components';
+import
 
 const Message = ({ type, comment }) => {
     return (
-        <Alert security={type}>
-            {comment}
-        </Alert>
     );
 }
 
-export default Message
+export default Message;
+
+const Wrapper = styled.div`
+  border: 1px solid red;
+`;
