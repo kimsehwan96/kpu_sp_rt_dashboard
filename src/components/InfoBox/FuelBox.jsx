@@ -11,16 +11,8 @@ import {
 import { useRealtimeData } from "../../context/RealtimeDataProvider";
 import FuelLiquid from "../../assets/Liquid";
 
-import Message from "../Message";
-
 const FuelBox = () => {
     const { ResidualFuel } = useRealtimeData();
-
-    useEffect(() => {
-        if(ResidualFuel.value < 100) {
-            return <Message type='warning' comment="Hello Message"/>
-        }
-    })
 
     return (
         <Wrapper>

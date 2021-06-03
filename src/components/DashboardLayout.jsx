@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { useTheme } from "../context/ThemeProvider";
 
 // InfoBox
 import DrivingBox from "./InfoBox/DrivingBox";
@@ -30,7 +29,7 @@ const DashboardLayout = () => {
                         time={Date.now()}
                         value={speed.value}
                         borderColor="#79BCCD"
-                        maxValue={250}
+                        maxValue={200}
                         minValue={0}
                     />
                 </Card>
@@ -40,7 +39,7 @@ const DashboardLayout = () => {
                         time={Date.now()}
                         value={RPM.value}
                         borderColor="#00A363"
-                        maxValue={250}
+                        maxValue={8000}
                         minValue={0}
                     />
                 </Card>
