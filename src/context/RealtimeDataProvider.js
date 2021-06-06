@@ -3,7 +3,7 @@ import title from '../libs/dataTitle.json';
 import unit from '../libs/dataUnit.json';
 import io from 'socket.io-client';
 
-const URL = 'http://3.34.87.77:5000/binder'
+const URL = process.env.REACT_APP_SOCKET_URL;
 const socket = io(URL)
 
 const RealtimeDataContext = createContext([]);
