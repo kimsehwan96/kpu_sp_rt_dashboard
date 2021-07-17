@@ -1,0 +1,7 @@
+{
+  "region": "ap-northeast-2",
+  "cognitoUserPoolId": "ap-northeast-2_AHNyewKXn",
+  "cognitoUserPoolClientId": "52606ojat3jpkk2igf1ad7lbu8",
+  "cognitoIdentityPoolId": "ap-northeast-2:a8f228c3-a609-47e6-8880-9ff913e6b1db",
+  "mqttBrokerEndpoint": "a1vsp1vk10ucaw-ats.iot.ap-northeast-2.amazonaws.com"
+}
